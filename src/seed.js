@@ -3,7 +3,7 @@
 var Todo = require("./models/todo.js");
 
 var todos = [
-    'Comanda',
+    'Nume Prenume',
 ];
 
 todos.forEach(function(todo, index) {
@@ -13,7 +13,8 @@ todos.forEach(function(todo, index) {
         if (!err && !todos.length) {
             Todo.create({
                 completed: false,
-                order: index + 1    ,
+                order: index + 1,
+                tel: '0745 000 000',
                 name: todo
             });
         }

@@ -109,16 +109,21 @@ webpackJsonp([0],[
 
 	'use strict';
 
-	function MainCtrl ($scope, dataService) {
+	function MainCtrl($scope, dataService) {
 
-	  dataService.getTodos(function(response){
+	  dataService.getTodos(function (response) {
 	    var todos = response.data.todos;
-	    $scope.todos =  todos;
+	    $scope.todos = todos;
 	  });
 
-	  $scope.addTodo = function() {
-	    $scope.todos.unshift({name: "This is a new todo.",
-	                      completed: false});
+	  $scope.addTodo = function () {
+	    $scope.todos.unshift({
+	      name: "Nume Prenume",
+	      dateCreated: new Date,
+	      order: $scope.todos.length + 1,
+	      tel: '0745 000 000',
+	      completed: false
+	    });
 	  };
 
 	}
