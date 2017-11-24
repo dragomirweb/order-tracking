@@ -1,2 +1,2 @@
-# mean-todo-app
-Using treehouse course to build a mean stack todo-app
+# Order Tracking
+Refactor mean app to a simple order tracking
