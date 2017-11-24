@@ -17,5 +17,6 @@ function MainCtrl($scope, dataService) {
     });
   };
   $scope.orderList = "name";
+}
 
 module.exports = MainCtrl;

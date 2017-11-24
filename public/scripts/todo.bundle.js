@@ -125,7 +125,7 @@ webpackJsonp([0],[
 	      completed: false
 	    });
 	  };
-
+	  $scope.orderList = "name";
 	}
 
 	module.exports = MainCtrl;
