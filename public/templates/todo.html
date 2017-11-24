@@ -1,19 +1,65 @@
-<div class="item" ng-class="{'editing-item': editing, 'edited': todo.edited, 'completed': todo.completed}" ng-repeat="todo in todos | orderBy: 'completed' ">
-  <input type="checkbox" ng-model="todo.completed" />
-  <span ng-click="todo.completed = !todo.completed; todo.edited = true"></span>
-  <label ng-hide="editing" ng-click="editing=true">{{todo.name}}</label>
-  <input ng-show="editing" ng-blur="editing = false" class="editing-label" type="text" ng-model="todo.name" ng-change="todo.edited = true"
-  />
-  <div ng-hide="editing" ng-click="editing=true">Telefon: {{todo.tel}}</div>
-  <input ng-show="editing" ng-blur="editing = false" class="editing-label" type="text" ng-model="todo.tel" ng-change="todo.edited = true">
-  </>
-  <div ng-hide="editing" ng-click="editing=true">Comanda:{{todo.order}}</div>
-  <textarea rows="3" ng-show="editing" ng-blur="editing = false" class="editing-label" type="text" ng-model="todo.order" ng-change="todo.edited = true">
-  </textarea>
-  <div>Data plasare comanda: {{ todo.dateCreated | date:'medium' }}</div>
-  <div ng-hide="editing" ng-click="editing=true">Data livrare comanda: {{ todo.dueDate | date:'medium' }}</div>
-  <input ng-show="editing" ng-blur="editing = false" class="editing-label" type="text" ng-model="todo.dueDate" ng-change="todo.edited = true">
-  </>
+<div
+    class="item"
+    ng-class="{'editing-item': editing, 'edited': todo.edited, 'completed': todo.completed}" ng-repeat="todo in todos | orderBy: 'completed' ">
+
+      <input type="checkbox" ng-model="todo.completed" />
+
+      <span ng-click="todo.completed = !todo.completed; todo.edited = true">
+      </span>
+
+      <label
+            ng-hide="editing"
+            ng-click="editing=true">
+              {{todo.name}}
+      </label>
+
+      <input
+            ng-show="editing"
+            ng-blur="editing = false"
+            class="editing-label"
+            type="text"
+            ng-model="todo.name"
+            ng-change="todo.edited = true" />
+
+      <div
+            ng-hide="editing"
+            ng-click="editing=true">
+              Telefon: {{todo.tel}}
+      </div>
+
+      <input
+            ng-show="editing"
+            ng-blur="editing = false"
+            class="editing-label"
+            type="text"
+            ng-model="todo.tel"
+            ng-change="todo.edited = true" />
+
+      <div  ng-hide="editing"
+            ng-click="editing=true">
+              Comanda:{{todo.order}}
+      </div>
+      <textarea rows="3"
+                ng-show="editing"
+                ng-blur="editing = false"
+                class="editing-label"
+                type="text"
+                ng-model="todo.order"
+                ng-change="todo.edited = true">
+      </textarea>
+      <div>
+              Data plasare comanda: {{ todo.dateCreated | date:'medium' }}
+      </div>
+      <div  ng-hide="editing"
+            ng-click="editing=true">
+              Data livrare comanda: {{ todo.dueDate | date:'medium' }}
+      </div>
+      <input ng-show="editing"
+             ng-blur="editing = false"
+             class="editing-label"
+             type="text"
+             ng-model="todo.dueDate"
+             ng-change="todo.edited = true" />
 
   <div class="actions">
     <a href="" ng-click="saveTodos()">Save</a>
