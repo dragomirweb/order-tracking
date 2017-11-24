@@ -1,0 +1,73 @@
+<div
+    class="item"
+    ng-class="{'editing-item': editing, 'edited': todo.edited, 'completed': todo.completed}" ng-repeat="todo in todos | orderBy: 'completed' ">
+
+      <input type="checkbox" ng-model="todo.completed" />
+
+      <span ng-click="todo.completed = !todo.completed; todo.edited = true">
+      </span>
+
+      <label
+            ng-hide="editing"
+            ng-click="editing=true">
+              {{todo.name}}
+      </label>
+
+      <input
+            ng-show="editing"
+            ng-blur="editing = false"
+            class="editing-label"
+            type="text"
+            ng-model="todo.name"
+            ng-change="todo.edited = true" />
+
+      <div  class="pointer margin-bottom-15 margin-top-15"
+            ng-hide="tel"
+            ng-click="tel=true">
+              Telefon: {{todo.tel}}
+      </div>
+
+      <input
+            ng-show="tel"
+            ng-blur="tel = false"
+            class="editing-label"
+            type="text"
+            ng-model="todo.tel"
+            ng-change="todo.edited = true" />
+
+      <div  class="pointer margin-bottom-15"
+            ng-hide="order"
+            ng-click="order=true">
+              Comanda:
+              <span class="blue">
+                {{todo.order}}
+              </span>
+      </div>
+      <textarea rows="3"
+                ng-show="order"
+                ng-blur="order = false"
+                class="editing-label"
+                type="text"
+                ng-model="todo.order"
+                ng-change="todo.edited = true">
+      </textarea>
+      <div class="margin-bottom-15">
+              Data plasare comanda: {{ todo.dateCreated | date:'medium' }}
+      </div>
+      <div  class="pointer"
+            ng-hide="datalivrare"
+            ng-click="datalivrare=true">
+              Data livrare comanda: {{ todo.dueDate | date:'medium' }}
+      </div>
+      <input ng-show="datalivrare"
+             ng-blur="datalivrare = false"
+             class="editing-label"
+             type="text"
+             ng-model="todo.dueDate"
+             ng-change="todo.edited = true" />
+
+  <div class="actions">
+    <a href="" ng-click="saveTodos()">Save</a>
+    <a href="" class="delete" ng-click="deleteTodo(todo, $index)">Delete</a>
+  </div>
+</div>
