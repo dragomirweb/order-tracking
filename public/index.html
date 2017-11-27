@@ -12,17 +12,25 @@
   <h1>Macaroons!</h1>
 
   <div class="list" ng-controller="mainCtrl">
+    
     <div class="search-tab">
-        <input type="text" placeholder="Cauta in baza de date" id="query" ng-model="query"/>
-        <select id="search" ng-model="orderList">
-            <option style="display:none" value="">Alege o optiune</option>
-            <option value="dateCreated">Ordoneaza dupa data intrare</option>
-            <option value="name">Ordoneaza dupa nume</option>
-            <option value="tel">Ordoneaza dupa telefon</option>
-            <option value="order">Ordoneaza dupa Comanda</option>
-            <option value="dueDate">Ordoneaza dupa livrare</option>
+
+        <input type="text"
+               placeholder="Cauta in baza de date"
+               id="query"
+               ng-model="query"/>
+
+        <select id="search"
+                ng-model="orderList">
+                  <option style="display:none" value="">Alege o optiune</option>
+                  <option value="dateCreated">Ordoneaza dupa data intrare</option>
+                  <option value="name">Ordoneaza dupa nume</option>
+                  <option value="tel">Ordoneaza dupa telefon</option>
+                  <option value="order">Ordoneaza dupa Comanda</option>
+                  <option value="dueDate">Ordoneaza dupa livrare</option>
         </select>
     </div>
+
     <div class="add">
       <a href="#" ng-click="addTodo()">
         + Adauga Comanda</a>
