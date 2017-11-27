@@ -16,7 +16,9 @@ function MainCtrl($scope, dataService) {
       completed: false
     });
   };
-  $scope.orderList = "name";
+  $scope.model = false;
+  $scope.orderList = "dateCreated";
+ 
 }
 
 module.exports = MainCtrl;

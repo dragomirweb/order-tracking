@@ -125,7 +125,8 @@ webpackJsonp([0],[
 	      completed: false
 	    });
 	  };
-	  $scope.orderList = "name";
+	  $scope.model = false;
+	  $scope.orderList = "dateCreated";
 	}
 
 	module.exports = MainCtrl;
